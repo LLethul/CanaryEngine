@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-moonwave plugin-id-moonwave">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v2.3.1">
+<title data-rh="true">Utility | CanaryEngine</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://canary-development.github.io/docs/CanaryEngine/api/Utility"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Utility | CanaryEngine"><meta data-rh="true" name="description" content="The Utility class."><meta data-rh="true" property="og:description" content="The Utility class."><link data-rh="true" rel="icon" href="/docs/CanaryEngine/favicon.png"><link data-rh="true" rel="canonical" href="https://canary-development.github.io/docs/CanaryEngine/api/Utility"><link data-rh="true" rel="alternate" href="https://canary-development.github.io/docs/CanaryEngine/api/Utility" hreflang="en"><link data-rh="true" rel="alternate" href="https://canary-development.github.io/docs/CanaryEngine/api/Utility" hreflang="x-default"><link rel="stylesheet" href="/docs/CanaryEngine/assets/css/styles.a5aeb1da.css">
+<link rel="preload" href="/docs/CanaryEngine/assets/js/runtime~main.05cf06a4.js" as="script">
+<link rel="preload" href="/docs/CanaryEngine/assets/js/main.21ed8042.js" as="script">
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
+<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs/CanaryEngine/"><b class="navbar__title text--truncate">CanaryEngine</b></a><a class="navbar__item navbar__link" href="/docs/CanaryEngine/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/CanaryEngine/api/">API</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/canary-development/CanaryEngine" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Press S to Search..." aria-label="Search" class="navbar__search-input search-bar"></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/CanaryEngine/api/Benchmark">​Benchmark</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/CanaryEngine/api/BenchmarkObject">​Benchmark​Object</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/CanaryEngine/api/CanaryEngine">​Canary​Engine</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/CanaryEngine/api/CanaryEngineClient">​Canary​Engine​Client</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/CanaryEngine/api/CanaryEngineServer">​Canary​Engine​Server</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/CanaryEngine/api/Statistics">​Statistics</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/docs/CanaryEngine/api/Utility">​Utility</a></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Utility</span></h1><div class="luaClassTags_EipM"></div><div>
+<p>The Utility class.</p>
+</div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="nilparam"><code style="text-decoration:none">nilparam</code><a href="#nilparam" class="hash-link" aria-label="Direct link to nilparam" title="Direct link to nilparam">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L17"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">nilparam</code><code>(</code><div class="inset_uKQm"><div><code>param<!-- -->: </code><code class="blue_P4bS">T?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The param to check the value of.</p>
+</span></span></div><div><code>default<!-- -->: </code><code class="blue_P4bS">T</code><span class="inlineDescription_G7Er">-- <span>
+<p>The default value to be provided if <code>param</code> is nil.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">T</code></div><div>
+<p>Checks if <code>param</code> is nil, and if it is, it will return the provided <code>default</code> value.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="assert"><code style="text-decoration:none">assert</code><a href="#assert" class="hash-link" aria-label="Direct link to assert" title="Direct link to assert">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L34"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">assert</code><code>(</code><div class="inset_uKQm"><div><code>assertion<!-- -->: </code><code class="blue_P4bS">T</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The param to check the value of.</p>
+</span></span></div><div><code>msg<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The error message to throw if <code>assertion</code> is not truthy.</p>
+</span></span></div><div><code>...<!-- -->: </code><code class="blue_P4bS">any</code><span class="inlineDescription_G7Er">-- <span>
+<p>Data to format in <code>msg</code>.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">T?</code></div><div>
+<p>Basically just <a href="https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#assert" target="_blank">assert</a>, but more performant.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="xassert"><code style="text-decoration:none">xassert</code><a href="#xassert" class="hash-link" aria-label="Direct link to xassert" title="Direct link to xassert">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L51"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">xassert</code><code>(</code><div class="inset_uKQm"><div><code>assertion<!-- -->: </code><code class="blue_P4bS">T</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The param to check the value of.</p>
+</span></span></div><div><code>handler<!-- -->: </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<p>The function to run if <code>assertion</code> is not truthy.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">T?</code></div><div>
+<p>Basically just <a href="https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#assert" target="_blank">assert</a> and <a href="https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#xpcall" target="_blank">xpcall</a> combined.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="assertmulti"><code style="text-decoration:none">assertmulti</code><a href="#assertmulti" class="hash-link" aria-label="Direct link to assertmulti" title="Direct link to assertmulti">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L64"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">assertmulti</code><code>(</code><div class="inset_uKQm"><div><code>...<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">a</code><code class="op_lSLc"> | </code><code class="blue_P4bS">b</code><code class="op_lSLc"> | </code><code class="green_DgR4">{</code><code class="blue_P4bS">any</code><code class="green_DgR4">}</code><code class="blue_P4bS">?</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>The assertion parameters, parameters are in same order as <code>Utility.assert</code>.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">T?</code></div><div>
+<p>Basically just <a href="https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#assert" target="_blank">assert</a> but can handle multple assertions in one function, cutting down on calls and wasted resources.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="DeepCopy"><code style="text-decoration:none">DeepCopy</code><a href="#DeepCopy" class="hash-link" aria-label="Direct link to DeepCopy" title="Direct link to DeepCopy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L79"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">DeepCopy</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">a</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>The table to deep copy. Can be a dictionary or an array.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS">a</code><code class="purple_ieR2">}</code></div><div>
+<p>Since <a href="https://create.roblox.com/docs/reference/engine/libraries/table#table.clone" target="_blank">table.clone</a> does not copy tables nested deeper then its parent, we created a function to deep copy tables which copies all tables nested inside it as well as the parent table.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="IsDictionary"><code style="text-decoration:none">IsDictionary</code><a href="#IsDictionary" class="hash-link" aria-label="Direct link to IsDictionary" title="Direct link to IsDictionary">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L99"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">IsDictionary</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>The table to check the type of.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p>Tells whether the provided table, <code>t</code>, is a dictionary or not. True if yes, and vice versa.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="DictionaryToArray"><code style="text-decoration:none">DictionaryToArray</code><a href="#DictionaryToArray" class="hash-link" aria-label="Direct link to DictionaryToArray" title="Direct link to DictionaryToArray">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L114"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">DictionaryToArray</code><code>(</code><div class="inset_uKQm"><div><code>d<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">a</code><code>]</code></span><code>: </code><code class="blue_P4bS">b</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>The dictionary to convert.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="green_DgR4">{</code><code class="blue_P4bS">a</code><code class="op_lSLc"> | </code><code class="blue_P4bS">b</code><code class="green_DgR4">}</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code></div><div>
+<p>Converts a dictionary to an array, can be useful for when cutting down on data costs. It essentially serializes a dictionary.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ArrayToDictionary"><code style="text-decoration:none">ArrayToDictionary</code><a href="#ArrayToDictionary" class="hash-link" aria-label="Direct link to ArrayToDictionary" title="Direct link to ArrayToDictionary">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L131"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">ArrayToDictionary</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><code class="green_DgR4">{</code><code class="blue_P4bS">a</code><code class="op_lSLc"> | </code><code class="blue_P4bS">b</code><code class="green_DgR4">}</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>The array to convert.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">a</code><code>]</code></span><code>: </code><code class="blue_P4bS">b</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code></div><div>
+<p>Converts an array to a dictionary, this is basically the deserializer for <code>Utility.DictionaryToArray</code>.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="dictionaryLen"><code style="text-decoration:none">dictionaryLen</code><a href="#dictionaryLen" class="hash-link" aria-label="Direct link to dictionaryLen" title="Direct link to dictionaryLen">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L151"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">dictionaryLen</code><code>(</code><div class="inset_uKQm"><div><code>d<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">any</code><code>]</code></span><code>: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
+<p>The dictionary to set the metamethod to.</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Running this function on a dictionary allows you to use the length (#) operator on dictionaries. <a href="https://create.roblox.com/docs/luau/operators#miscellaneous" target="_blank">Length operator</a></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="GetAncestors"><code style="text-decoration:none">GetAncestors</code><a href="#GetAncestors" class="hash-link" aria-label="Direct link to GetAncestors" title="Direct link to GetAncestors">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L173"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">GetAncestors</code><code>(</code><div class="inset_uKQm"><div><code>instance<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The instance to get the ancestors of.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code class="purple_ieR2">}</code></div><div>
+<p>Returns every ancestor of <code>instance</code>, excluding the <a href="https://create.roblox.com/docs/projects/data-model" target="_blank">DataModel</a></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="WaitForChildWhichIsA"><code style="text-decoration:none">WaitForChildWhichIsA</code><a href="#WaitForChildWhichIsA" class="hash-link" aria-label="Direct link to WaitForChildWhichIsA" title="Direct link to WaitForChildWhichIsA">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L195"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">WaitForChildWhichIsA</code><code>(</code><div class="inset_uKQm"><div><code>instance<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The instance to perform the function on.</p>
+</span></span></div><div><code>className<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The <a href="https://developer.roblox.com/en-us/api-reference/datatype/Instance#ClassName" target="_blank">Instance.ClassName</a> to look for, uses <a href="https://developer.roblox.com/en-us/api-reference/datatype/Instance#IsA" target="_blank">Instance:IsA</a>.</p>
+</span></span></div><div><code>timeOut<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
+<p>The amount of time to wait until the child request is timed out.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>Basically <a href="https://developer.roblox.com/en-us/api-reference/datatype/Instance#WaitForChild" target="_blank">Instance:WaitForChild</a> and <a href="https://developer.roblox.com/en-us/api-reference/datatype/Instance#FindFirstChildWhichIsA" target="_blank">Instance:FindFirstChildWhichIsA</a> combined.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="WaitForChildOfClass"><code style="text-decoration:none">WaitForChildOfClass</code><a href="#WaitForChildOfClass" class="hash-link" aria-label="Direct link to WaitForChildOfClass" title="Direct link to WaitForChildOfClass">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L212"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">WaitForChildOfClass</code><code>(</code><div class="inset_uKQm"><div><code>instance<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The instance to perform the function on.</p>
+</span></span></div><div><code>className<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The <a href="https://developer.roblox.com/en-us/api-reference/datatype/Instance#ClassName" target="_blank">Instance.ClassName</a> to look for.</p>
+</span></span></div><div><code>timeOut<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
+<p>The amount of time to wait until the child request is timed out.</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/datatype/Instance" target="_blank" rel="noopener noreferrer">Instance<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code></div><div>
+<p>Basically <a href="https://developer.roblox.com/en-us/api-reference/datatype/Instance#WaitForChild" target="_blank">Instance:WaitForChild</a> and <a href="https://developer.roblox.com/en-us/api-reference/datatype/Instance#FindFirstChildOfClass" target="_blank">Instance:FindFirstChildOfClass</a> combined.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ConflictingValues"><code style="text-decoration:none">ConflictingValues</code><a href="#ConflictingValues" class="hash-link" aria-label="Direct link to ConflictingValues" title="Direct link to ConflictingValues">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L236"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">ConflictingValues</code><code>(</code><div class="inset_uKQm"><div><code>values<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The list of values to be checked.</p>
+</span></span></div><div><code>sep<!-- -->: </code><code class="blue_P4bS">string?</code><span class="inlineDescription_G7Er">-- <span>
+<p>If values are conflicting with each other, an error of the indexes are thrown and this is the separator between each one.</p>
+</span></span></div></div><code>) → </code><code class="purple_ieR2">(</code><div class="inset_uKQm"><code class="blue_P4bS">boolean</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code class="blue_P4bS">string?</code></div><code class="purple_ieR2">)</code></div><div>
+<p>Iterates through a list of values and returns a boolean and a string. If the value is true, then a string will be returned with a list of values and their order in the original list. The function is useful for times when you only want 1 value to be used at a time. <strong>Example:</strong></p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MyValues <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token keyword">false</span><span class="token punctuation">}</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>Utility<span class="token punctuation">.</span><span class="token function">ConflictingValues</span><span class="token punctuation">(</span>MyValues<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">-- Output: true Conflicting Values: 1, 2</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="TableToString"><code style="text-decoration:none">TableToString</code><a href="#TableToString" class="hash-link" aria-label="Direct link to TableToString" title="Direct link to TableToString">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/canary-development/CanaryEngine/blob/master/src/Utility.lua#L271"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Utility<!-- -->.</code><code class="green_DgR4">TableToString</code><code>(</code><div class="inset_uKQm"><div><code>t<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">any</code><code>]</code></span><code>: </code><code class="blue_P4bS">any</code><code class="purple_ieR2">}</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The table to convert to a string.</p>
+</span></span></div><div><code>sep<!-- -->: </code><code class="blue_P4bS">string?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The separator between each key + value</p>
+</span></span></div><div><code>i<!-- -->: </code><code class="blue_P4bS">number?</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The index to start at. (only applies to arrays)</p>
+</span></span></div><div><code>j<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
+<p>The index to end at. (only applies to arrays)</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">string?</code></div><div>
+<p>Converts a table to a string, useful for displaying tables on GUI's. This is compatible with nested tables, dictionaries, and arrays. Example:</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MyTable <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"This table"</span><span class="token punctuation">,</span> <span class="token string">"was converted into"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"string"</span><span class="token punctuation">,</span> <span class="token string">"!"</span><span class="token punctuation">}</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>Utility<span class="token punctuation">.</span><span class="token function">TableToString</span><span class="token punctuation">(</span>MyTable<span class="token punctuation">,</span> <span class="token string">", "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">-- Output: {[1] = "This table", [2] = "was converted into", [3] = 1, [4] = "string", [5] = "!"}</span>
+</code></pre>
+</div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
+    &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;nilparam&quot;,
+            &quot;desc&quot;: &quot;Checks if `param` is nil, and if it is, it will return the provided `default` value.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;param&quot;,
+                    &quot;desc&quot;: &quot;The param to check the value of.&quot;,
+                    &quot;lua_type&quot;: &quot;T?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;default&quot;,
+                    &quot;desc&quot;: &quot;The default value to be provided if `param` is nil.&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 17,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;assert&quot;,
+            &quot;desc&quot;: &quot;Basically just [assert](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#assert), but more performant.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;assertion&quot;,
+                    &quot;desc&quot;: &quot;The param to check the value of.&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;msg&quot;,
+                    &quot;desc&quot;: &quot;The error message to throw if `assertion` is not truthy.&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;...&quot;,
+                    &quot;desc&quot;: &quot;Data to format in `msg`.&quot;,
+                    &quot;lua_type&quot;: &quot;any&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;T?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 34,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;xassert&quot;,
+            &quot;desc&quot;: &quot;Basically just [assert](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#assert) and [xpcall](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#xpcall) combined.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;assertion&quot;,
+                    &quot;desc&quot;: &quot;The param to check the value of.&quot;,
+                    &quot;lua_type&quot;: &quot;T&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;handler&quot;,
+                    &quot;desc&quot;: &quot;The function to run if `assertion` is not truthy.&quot;,
+                    &quot;lua_type&quot;: &quot;() -&gt; ()&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;T?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 51,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;assertmulti&quot;,
+            &quot;desc&quot;: &quot;Basically just [assert](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#assert) but can handle multple assertions in one function, cutting down on calls and wasted resources.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;...&quot;,
+                    &quot;desc&quot;: &quot;The assertion parameters, parameters are in same order as `Utility.assert`.&quot;,
+                    &quot;lua_type&quot;: &quot;{a | b| {any}?}&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;T?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 64,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;DeepCopy&quot;,
+            &quot;desc&quot;: &quot;Since [table.clone](https://create.roblox.com/docs/reference/engine/libraries/table#table.clone) does not copy tables nested deeper then its parent, we created a function to deep copy tables which copies all tables nested inside it as well as the parent table.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;The table to deep copy. Can be a dictionary or an array.&quot;,
+                    &quot;lua_type&quot;: &quot;{a}&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;{a}&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 79,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;IsDictionary&quot;,
+            &quot;desc&quot;: &quot;Tells whether the provided table, `t`, is a dictionary or not. True if yes, and vice versa.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;The table to check the type of.&quot;,
+                    &quot;lua_type&quot;: &quot;{any}&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 99,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;DictionaryToArray&quot;,
+            &quot;desc&quot;: &quot;Converts a dictionary to an array, can be useful for when cutting down on data costs. It essentially serializes a dictionary.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;d&quot;,
+                    &quot;desc&quot;: &quot;The dictionary to convert.&quot;,
+                    &quot;lua_type&quot;: &quot;{[a]: b}&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;{{a | b}}?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 114,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ArrayToDictionary&quot;,
+            &quot;desc&quot;: &quot;Converts an array to a dictionary, this is basically the deserializer for `Utility.DictionaryToArray`.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;The array to convert.&quot;,
+                    &quot;lua_type&quot;: &quot;{{a | b}}&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;{[a]: b}?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 131,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;dictionaryLen&quot;,
+            &quot;desc&quot;: &quot;Running this function on a dictionary allows you to use the length (#) operator on dictionaries. [Length operator](https://create.roblox.com/docs/luau/operators#miscellaneous)&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;d&quot;,
+                    &quot;desc&quot;: &quot;The dictionary to set the metamethod to.&quot;,
+                    &quot;lua_type&quot;: &quot;{[any]: any}&quot;
+                }
+            ],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 151,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;GetAncestors&quot;,
+            &quot;desc&quot;: &quot;Returns every ancestor of `instance`, excluding the [DataModel](https://create.roblox.com/docs/projects/data-model)&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;instance&quot;,
+                    &quot;desc&quot;: &quot;The instance to get the ancestors of.&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;{Instance}&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 173,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;WaitForChildWhichIsA&quot;,
+            &quot;desc&quot;: &quot;Basically [Instance:WaitForChild] and [Instance:FindFirstChildWhichIsA] combined.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;instance&quot;,
+                    &quot;desc&quot;: &quot;The instance to perform the function on.&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;className&quot;,
+                    &quot;desc&quot;: &quot;The [Instance.ClassName] to look for, uses [Instance:IsA].&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;timeOut&quot;,
+                    &quot;desc&quot;: &quot;The amount of time to wait until the child request is timed out.&quot;,
+                    &quot;lua_type&quot;: &quot;number?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 195,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;WaitForChildOfClass&quot;,
+            &quot;desc&quot;: &quot;Basically [Instance:WaitForChild] and [Instance:FindFirstChildOfClass] combined.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;instance&quot;,
+                    &quot;desc&quot;: &quot;The instance to perform the function on.&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;className&quot;,
+                    &quot;desc&quot;: &quot;The [Instance.ClassName] to look for.&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;timeOut&quot;,
+                    &quot;desc&quot;: &quot;The amount of time to wait until the child request is timed out.&quot;,
+                    &quot;lua_type&quot;: &quot;number?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Instance&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 212,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ConflictingValues&quot;,
+            &quot;desc&quot;: &quot;Iterates through a list of values and returns a boolean and a string. If the value is true, then a string will be returned with a list of values and their order in the original list. The function is useful for times when you only want 1 value to be used at a time. **Example:**\n\n```lua\nlocal MyValues = {true, true, false}\n\nprint(Utility.ConflictingValues(MyValues))\n\n-- Output: true Conflicting Values: 1, 2\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;values&quot;,
+                    &quot;desc&quot;: &quot;The list of values to be checked.&quot;,
+                    &quot;lua_type&quot;: &quot;{any}&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;sep&quot;,
+                    &quot;desc&quot;: &quot;If values are conflicting with each other, an error of the indexes are thrown and this is the separator between each one.&quot;,
+                    &quot;lua_type&quot;: &quot;string?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;(boolean, string?)&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 236,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;TableToString&quot;,
+            &quot;desc&quot;: &quot;Converts a table to a string, useful for displaying tables on GUI&#x27;s. This is compatible with nested tables, dictionaries, and arrays. Example:\n\n```lua\nlocal MyTable = {\&quot;This table\&quot;, \&quot;was converted into\&quot;, 1, \&quot;string\&quot;, \&quot;!\&quot;}\n\nprint(Utility.TableToString(MyTable, \&quot;, \&quot;))\n-- Output: {[1] = \&quot;This table\&quot;, [2] = \&quot;was converted into\&quot;, [3] = 1, [4] = \&quot;string\&quot;, [5] = \&quot;!\&quot;}\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;t&quot;,
+                    &quot;desc&quot;: &quot;The table to convert to a string.&quot;,
+                    &quot;lua_type&quot;: &quot;{[any]: any}&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;sep&quot;,
+                    &quot;desc&quot;: &quot;The separator between each key + value&quot;,
+                    &quot;lua_type&quot;: &quot;string?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;i&quot;,
+                    &quot;desc&quot;: &quot;The index to start at. (only applies to arrays)&quot;,
+                    &quot;lua_type&quot;: &quot;number?&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;j&quot;,
+                    &quot;desc&quot;: &quot;The index to end at. (only applies to arrays)&quot;,
+                    &quot;lua_type&quot;: &quot;number?&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 271,
+                &quot;path&quot;: &quot;src/Utility.lua&quot;
+            }
+        }
+    ],
+    &quot;properties&quot;: [],
+    &quot;types&quot;: [],
+    &quot;name&quot;: &quot;Utility&quot;,
+    &quot;desc&quot;: &quot;The Utility class.&quot;,
+    &quot;source&quot;: {
+        &quot;line&quot;: 6,
+        &quot;path&quot;: &quot;src/Utility.lua&quot;
+    }
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#ArrayToDictionary" class="table-of-contents__link toc-highlight">.ArrayToDictionary</a></li><li><a href="#assert" class="table-of-contents__link toc-highlight">.assert</a></li><li><a href="#assertmulti" class="table-of-contents__link toc-highlight">.assertmulti</a></li><li><a href="#ConflictingValues" class="table-of-contents__link toc-highlight">.ConflictingValues</a></li><li><a href="#DeepCopy" class="table-of-contents__link toc-highlight">.DeepCopy</a></li><li><a href="#dictionaryLen" class="table-of-contents__link toc-highlight">.dictionaryLen</a></li><li><a href="#DictionaryToArray" class="table-of-contents__link toc-highlight">.DictionaryToArray</a></li><li><a href="#GetAncestors" class="table-of-contents__link toc-highlight">.GetAncestors</a></li><li><a href="#IsDictionary" class="table-of-contents__link toc-highlight">.IsDictionary</a></li><li><a href="#nilparam" class="table-of-contents__link toc-highlight">.nilparam</a></li><li><a href="#TableToString" class="table-of-contents__link toc-highlight">.TableToString</a></li><li><a href="#WaitForChildOfClass" class="table-of-contents__link toc-highlight">.WaitForChildOfClass</a></li><li><a href="#WaitForChildWhichIsA" class="table-of-contents__link toc-highlight">.WaitForChildWhichIsA</a></li><li><a href="#xassert" class="table-of-contents__link toc-highlight">.xassert</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 lolmansReturn. Built with Moonwave and Docusaurus</div></div></div></footer></div>
+<script src="/docs/CanaryEngine/assets/js/runtime~main.05cf06a4.js"></script>
+<script src="/docs/CanaryEngine/assets/js/main.21ed8042.js"></script>
+</body>
+</html>
