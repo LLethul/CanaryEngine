@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[197],{63891:e=>{e.exports=JSON.parse('{"sourceUrl":"https://github.com/canary-development/CanaryEngine/blob/master","baseUrl":"/docs/CanaryEngine/","classOrder":[],"apiCategories":[]}')}}]);
