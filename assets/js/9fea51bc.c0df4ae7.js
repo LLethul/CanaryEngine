@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[2812],{69108:e=>{e.exports=JSON.parse('{"functions":[],"properties":[],"types":[],"name":"CanaryPackageClient","desc":"A package\'s client-sided interface.","realm":["Client"],"source":{"line":133,"path":"src/init.lua"}}')}}]);
