@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[2535],{45641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Engine Recap - August 2023","permalink":"/CanaryEngine/blog/enginerecap-august2023"},{"title":"Engine Recap - July 2023","permalink":"/CanaryEngine/blog/enginerecap-july2023"}]}')}}]);

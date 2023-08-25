@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://canary-development.github.io/CanaryEngine/blog</id>
+    <title>CanaryEngine Blog</title>
+    <updated>2023-08-24T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://canary-development.github.io/CanaryEngine/blog"/>
+    <subtitle>CanaryEngine Blog</subtitle>
+    <icon>https://canary-development.github.io/CanaryEngine/favicon.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Engine Recap - August 2023]]></title>
+        <id>https://canary-development.github.io/CanaryEngine/blog/enginerecap-august2023</id>
+        <link href="https://canary-development.github.io/CanaryEngine/blog/enginerecap-august2023"/>
+        <updated>2023-08-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hi developers,]]></summary>
+        <content type="html"><![CDATA[<p><strong>Hi developers,</strong></p><p>With engine update 3.3.5, we have gathered lots of feedback by our users and fixed bugs related to networking.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="more-debugger-resources">More Debugger Resources<a href="#more-debugger-resources" class="hash-link" aria-label="Direct link to More Debugger Resources" title="Direct link to More Debugger Resources">​</a></h3><p>We have added 2 new functions and 1 new feature to the debug API. You can now Assert values, and clear the output / cache lists. Calling debug also adds items to the cache list.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="create-topbar-icons-with-uishelf">Create Topbar Icons with UIShelf<a href="#create-topbar-icons-with-uishelf" class="hash-link" aria-label="Direct link to Create Topbar Icons with UIShelf" title="Direct link to Create Topbar Icons with UIShelf">​</a></h3><p>The new library UIShelf, you can now create topbar icons that mimic the CoreGui 1:1. We've taken into account every single design aspect that the top bar button has and have been able to replicate it.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="network-controller-improvements">Network Controller Improvements<a href="#network-controller-improvements" class="hash-link" aria-label="Direct link to Network Controller Improvements" title="Direct link to Network Controller Improvements">​</a></h3><p>You can now set a client timeout for network controllers, allowing you to minimize timeout errors. This should fix most of the issues you guys have been having as of late.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="documentation-improvements">Documentation Improvements<a href="#documentation-improvements" class="hash-link" aria-label="Direct link to Documentation Improvements" title="Direct link to Documentation Improvements">​</a></h3><p>We have improved the documentation site! Coming with 4 new detailed tutorials, more API documentation, and this new blog! We will post engine recaps like this here and they will be exclusive to this website. New API sections have also been added to help organize it.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="plugin-improvements">Plugin Improvements<a href="#plugin-improvements" class="hash-link" aria-label="Direct link to Plugin Improvements" title="Direct link to Plugin Improvements">​</a></h3><p>We have improved the plugin a little bit (no rebuild yet) and have stopped a few more bugs from popping up. BridgeNet has also been updated to 0.5.4. We are planning lots more for the future, and we will be adding the HintService library soon once it is revamped.</p><hr><p>If you're interested in contributing, please make a PR on our GitHub!</p>]]></content>
+        <author>
+            <name>James</name>
+            <uri>https://github.com/lolmansReturn</uri>
+        </author>
+        <author>
+            <name>koxx12</name>
+            <uri>https://github.com/koxx12-dev</uri>
+        </author>
+        <category label="canaryengine" term="canaryengine"/>
+        <category label="recap" term="recap"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Engine Recap - July 2023]]></title>
+        <id>https://canary-development.github.io/CanaryEngine/blog/enginerecap-july2023</id>
+        <link href="https://canary-development.github.io/CanaryEngine/blog/enginerecap-july2023"/>
+        <updated>2023-07-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hi developers,]]></summary>
+        <content type="html"><![CDATA[<p><strong>Hi developers,</strong></p><p>With engine update 3.2.4, we have released lots of changes based on feedback, and lots of long time bug fixes.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="anonymous-signals">Anonymous Signals<a href="#anonymous-signals" class="hash-link" aria-label="Direct link to Anonymous Signals" title="Direct link to Anonymous Signals">​</a></h3><p>First off, we have added the <code>AnonymousSignal</code> API thanks to @koxx12. This allows you to create signals that are only referenced once, and not cached.</p><div class="language-lua codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-lua codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token keyword" style="font-style:italic">local</span><span class="token plain"> MyNewAnonymousSignal </span><span class="token operator" style="color:rgb(137, 221, 255)">=</span><span class="token plain"> CanaryEngine</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token function" style="color:rgb(130, 170, 255)">CreateAnonymousSignal</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"> </span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">-- this is the only reference held to the signal controller!</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="updated-benchmark-library">Updated Benchmark Library<a href="#updated-benchmark-library" class="hash-link" aria-label="Direct link to Updated Benchmark Library" title="Direct link to Updated Benchmark Library">​</a></h3><p>We have updated the <code>Benchmark</code> library to provide more accurate information, and more useful information such as longest benchmark and shortest. This will allow you to get a more in-depth result of your testing, allowing you to create even better code!</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="enginereplicatedfirst">EngineReplicatedFirst<a href="#enginereplicatedfirst" class="hash-link" aria-label="Direct link to EngineReplicatedFirst" title="Direct link to EngineReplicatedFirst">​</a></h3><p>We have added a folder for <code>ReplicatedFirst</code>! Now you can have custom loader scripts, or startup scripts still run without being deattached from the framework. This also lets us execute our next feature...</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="engine-loader">Engine Loader<a href="#engine-loader" class="hash-link" aria-label="Direct link to Engine Loader" title="Direct link to Engine Loader">​</a></h3><p>Introducing the engine loader! This is a custom loading screen made directly for CanaryEngine, and it functions better in performance than most loading screens. It also shares extensive info, like the current asset completed percentage, and even failed assets once finished! You can view the API under <strong>Engine API &gt; EngineLoader</strong>.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="other-improvements">Other Improvements<a href="#other-improvements" class="hash-link" aria-label="Direct link to Other Improvements" title="Direct link to Other Improvements">​</a></h3><ul><li>Improves types</li><li>Fixes plugin bugs</li><li>Fixes <code>SignalController</code>s not working <em>at all</em></li><li>Fixes other small bugs</li></ul><hr><p>If you're interested in contributing, please make a PR on our GitHub!</p>]]></content>
+        <author>
+            <name>James</name>
+            <uri>https://github.com/lolmansReturn</uri>
+        </author>
+        <author>
+            <name>koxx12</name>
+            <uri>https://github.com/koxx12-dev</uri>
+        </author>
+        <category label="canaryengine" term="canaryengine"/>
+        <category label="recap" term="recap"/>
+    </entry>
+</feed>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[9337],{17708:a=>{a.exports=JSON.parse('{"label":"recap","permalink":"/CanaryEngine/blog/tags/recap","allTagsPath":"/CanaryEngine/blog/tags","count":2}')}}]);
