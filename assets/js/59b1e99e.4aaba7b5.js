@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[1363],{55090:e=>{e.exports=JSON.parse('{"functions":[],"properties":[],"types":[],"name":"EngineRuntimeContext","desc":"The parent of all classes.","source":{"line":30,"path":"src/internal/runtime.lua"}}')}}]);
